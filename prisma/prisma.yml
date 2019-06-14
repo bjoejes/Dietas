@@ -1,0 +1,13 @@
+# The HTTP endpoint for your Prisma API
+endpoint: 'https://us1.prisma.sh/jessica-55fac1/Dietas/Inicio'
+# Points to the file that contains your datamodel
+datamodel: datamodel.prisma
+
+# Specifies language & location for the generated Prisma client
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+#Genera prisma despues de deployar
+hooks:
+  post-deploy:
+    - prisma generate
